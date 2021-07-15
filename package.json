@@ -1,8 +1,8 @@
 {
-  "name": "datocms-plugin-starter-addon",
-  "homepage": "https://github.com/YOUR-USER/datocms-plugin-starter-addon",
+  "name": "datocms-plugin-conditional-fields-extended",
+  "homepage": "https://github.com/m8rzel/datocms-plugin-creator",
   "version": "0.0.1",
-  "description": "DatoCMS Starter package",
+  "description": "DatoCMS Plugin Conditional Fields for text-, string- and boolean-Fields",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --port 5000",
@@ -25,13 +25,15 @@
   "author": "Marcel Wiskow <m.wiskow96@gmail.com>",
   "license": "ISC",
   "datoCmsPlugin": {
-    "title": "Starter Addon",
+    "title": "DatoCMS Conditional Fields string, text, bool",
     "previewImage": "docs/preview.gif",
     "coverImage": "docs/cover.png",
     "entryPoint": "dist/index.html",
     "pluginType": "field_addon",
     "fieldTypes": [
-      "text"
+      "text",
+      "string",
+      "boolean"
     ],
     "parameters": {
       "global": [
@@ -44,28 +46,45 @@
           "hint": "Shows debug messages in console"
         }
       ],
-      "instance": []
+      "instance": [
+        {
+            "id": "field",
+            "label": "Field",
+            "hint": "Field you want to show",
+            "type": "string",
+            "required": true,
+            "default": ""
+          },
+          {
+            "id": "options",
+            "label": "Options",
+            "hint": "...if this Option is selected",
+            "type": "string",
+            "required": true,
+            "default": ""
+          }
+      ]
     }
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-decorators": "^7.1.2",
-    "@babel/preset-react": "^7.0.0",
     "@babel/cli": "^7.0.0-beta.54",
     "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0-beta.54",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta",
     "css-loader": "^1.0.0",
     "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
     "generator-datocms-plugin": "^1.0.24",
     "html-webpack-inline-source-plugin": "^0.0.10",
     "html-webpack-plugin": "^3.2.0",
@@ -77,13 +96,14 @@
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.10",
-    "yo": "^3.1.1"
+    "yo": "^4.2.0"
   },
   "dependencies": {
     "classname": "^0.0.0",
+    "html-webpack-tags-plugin": "^2.0.17",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "prop-types": "^15.7.2",
-    "html-webpack-tags-plugin": "^2.0.17"
+    "yeoman-environment": "^3.5.1"
   }
 }

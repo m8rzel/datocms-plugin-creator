@@ -7,6 +7,8 @@ const Root = ({ plugin }) => {
   const [state, setState] = useState({
     developmentMode: plugin.parameters.global.developmentMode,
     fieldValue: plugin.getFieldValue(plugin.fieldPath),
+    option: plugin.parameters.instance.options,
+    fieldToShow: plugin.parameters.instance.field,
   });
 
   useEffect(() => {
@@ -14,6 +16,8 @@ const Root = ({ plugin }) => {
       setState({
         developmentMode: plugin.parameters.global.developmentMode,
         fieldValue: plugin.getFieldValue(plugin.fieldPath),
+        option: plugin.parameters.instance.options,
+        fieldToShow: plugin.parameters.instance.field,
       });
     });
 
