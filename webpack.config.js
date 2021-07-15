@@ -4,11 +4,11 @@ const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: __dirname + '/src/index.jsx',
+  entry: `${__dirname}/src/index.jsx`,
   mode: process.env.NODE_ENV,
   output: {
-    path: __dirname + '/dist',
-    filename: 'bundle.js'
+    path: `${__dirname}/dist`,
+    filename: 'bundle.js',
   },
   devtool: 'source-map',
   devServer: {
@@ -20,28 +20,29 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        include: __dirname + '/src',
+        include: `${__dirname}/src`,
         loader: 'eslint-loader',
         enforce: 'pre',
       },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        use: { loader: 'babel-loader' } },
+        use: { loader: 'babel-loader' },
+      },
       {
         test: /\.sass$/,
         use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader"
-        ]
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.svg/,
         use: {
           loader: 'svg-url-loader',
-          options: {}
-        }
+          options: {},
+        },
       },
     ],
   },
@@ -59,7 +60,7 @@ module.exports = {
       tags: [
         'https://unpkg.com/datocms-plugins-sdk@0.1.1/dist/sdk.js',
         'https://unpkg.com/datocms-plugins-sdk@0.1.1/dist/sdk.css',
-      ]
+      ],
     }),
   ].filter(Boolean),
-}
+};

@@ -1,7 +1,8 @@
 {
   "name": "datocms-plugin-conditional-fields-extended",
   "homepage": "https://github.com/m8rzel/datocms-plugin-creator",
-  "version": "0.0.1",
+  "version": "0.1.1",
+  "author": "Marcel Wiskow <m.wiskow96@gmail.com>",
   "description": "DatoCMS Plugin Conditional Fields for text-, string- and boolean-Fields",
   "main": "index.js",
   "scripts": {
@@ -22,7 +23,6 @@
     "dist",
     "docs"
   ],
-  "author": "Marcel Wiskow <m.wiskow96@gmail.com>",
   "license": "ISC",
   "datoCmsPlugin": {
     "title": "DatoCMS Conditional Fields string, text, bool",
@@ -48,21 +48,21 @@
       ],
       "instance": [
         {
-            "id": "field",
-            "label": "Field",
-            "hint": "Field you want to show",
-            "type": "string",
-            "required": true,
-            "default": ""
-          },
-          {
-            "id": "options",
-            "label": "Options",
-            "hint": "...if this Option is selected",
-            "type": "string",
-            "required": true,
-            "default": ""
-          }
+          "id": "field",
+          "label": "Field",
+          "hint": "Field you want to show",
+          "type": "string",
+          "required": true,
+          "default": ""
+        },
+        {
+          "id": "options",
+          "label": "Options",
+          "hint": "...if this Option is selected",
+          "type": "string",
+          "required": true,
+          "default": ""
+        }
       ]
     }
   },
@@ -81,7 +81,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-import-resolver-webpack": "^0.10.1",
-    "eslint-loader": "^2.1.0",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
