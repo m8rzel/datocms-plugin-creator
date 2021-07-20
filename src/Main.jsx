@@ -6,8 +6,6 @@ import './style.sass';
 const Main = ({
   fieldValue, plugin, option, fieldToShow,
 }) => {
-  console.log('Hallo du Keck', plugin.field.attributes);
-
   // Create correct fieldPath
   const currentFieldPath = plugin.fieldPath;
   const modifiedFieldPath = currentFieldPath.replace(plugin.field.attributes.api_key, '');
