@@ -3,7 +3,7 @@
   "homepage": "https://github.com/m8rzel/datocms-plugin-creator",
   "version": "0.1.0",
   "author": "Marcel Wiskow <m.wiskow96@gmail.com>",
-  "description": "DatoCMS Plugin Conditional Fields for text-, string- and boolean-Fields",
+  "description": "DatoCMS Plugin Conditional Fields for text-, string- and boolean-fields, you can separate the field input by ','. It´s for string-dropdowns or Booleans. Also you could use textfields",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --port 5000",
@@ -50,7 +50,7 @@
         {
           "id": "field",
           "label": "Field",
-          "hint": "Field you want to show",
+          "hint": "Fields you want to show (separated by ',')",
           "type": "string",
           "required": true,
           "default": ""
