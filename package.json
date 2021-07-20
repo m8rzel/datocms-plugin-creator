@@ -1,7 +1,7 @@
 {
   "name": "datocms-plugin-conditional-fields-extended",
   "homepage": "https://github.com/m8rzel/datocms-plugin-creator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Marcel Wiskow <m.wiskow96@gmail.com>",
   "description": "DatoCMS Plugin Conditional Fields for text-, string- and boolean-fields, you can separate the field input by ','. It´s for string-dropdowns or Booleans. Also you could use textfields",
   "main": "index.js",
