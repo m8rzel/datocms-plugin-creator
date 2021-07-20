@@ -9,20 +9,27 @@ const Main = ({
   // Create correct fieldPath
   const currentFieldPath = plugin.fieldPath;
   const modifiedFieldPath = currentFieldPath.replace(plugin.field.attributes.api_key, '');
+  const fieldToShowArray = fieldToShow.split(',').map(item => (item.trim()));
   console.log('Modified Field path', `${currentFieldPath} ${modifiedFieldPath}`);
 
+  const toggleField = (type) => {
+    fieldToShowArray.map((field) => {
+      plugin.toggleField(modifiedFieldPath + field, type);
+      return '';
+    });
+  };
 
   if (plugin.field.attributes.field_type === 'boolean') {
     const formattedOption = (option === 'true');
     if (fieldValue === formattedOption) {
-      plugin.toggleField(modifiedFieldPath + fieldToShow, true);
+      toggleField(true);
     } else {
-      plugin.toggleField(modifiedFieldPath + fieldToShow, false);
+      toggleField(false);
     }
   } else if (plugin.getFieldValue(plugin.fieldPath) === option) {
-    plugin.toggleField(modifiedFieldPath + fieldToShow, true);
+    toggleField(true);
   } else {
-    plugin.toggleField(modifiedFieldPath + fieldToShow, false);
+    toggleField(false);
   }
   return (
     <></>
